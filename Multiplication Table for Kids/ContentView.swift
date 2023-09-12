@@ -18,11 +18,13 @@ struct ContentView: View {
     @State private var isCorrect = false
     @State private var correctCount = 0
     @State private var incorrectCount = 0
+    
+    @FocusState private var amountisFocused: Bool
 
     var body: some View {
         ZStack {
             RadialGradient(gradient: Gradient(colors: [.yellow, .cyan]), center: .topLeading, startRadius: 5, endRadius: 600)
-                .edgesIgnoringSafeArea(.all)
+                .edgesIgnoringSafeArea(.bottom)
             VStack {
                 Spacer()
                 if !isGameStarted {
@@ -36,14 +38,19 @@ struct ContentView: View {
                         Text("Таблица: \(selectedTable)")
                             .font(.title)
                             .foregroundColor(.black)
+                            .underline()
+                            
                     }
                     
                     .padding()
+                    .background(.cyan)
+                    
+                    
                     
                     Text("Выберите количество вопросов:")
                         .font(.title)
                         .foregroundColor(.black)
-                        .padding()
+                        .padding(30)
                     
                     Picker("Количество вопросов", selection: $numberOfQuestions) {
                         Text("5").tag(5)
@@ -73,7 +80,10 @@ struct ContentView: View {
                             .padding()
                         
                         TextField("Введите ответ", text: $userAnswer)
+                            .foregroundColor(.white)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .keyboardType(.numberPad)
+                            .focused($amountisFocused)
                             .padding()
                         Button(action: checkAnswer) {
                             Image(systemName: "pencil.line")
@@ -115,6 +125,15 @@ struct ContentView: View {
                             .font(.title)
                             .padding()
                             .foregroundColor(.black)
+                    }
+                    .toolbar {
+                        ToolbarItemGroup(placement: .keyboard) {
+                            Spacer()
+                            
+                            Button("Done") {
+                                amountisFocused = false
+                            }
+                        }
                     }
                 }
             }
