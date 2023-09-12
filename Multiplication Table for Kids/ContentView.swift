@@ -21,7 +21,7 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
-            RadialGradient(gradient: Gradient(colors: [.yellow, .red]), center: .topLeading, startRadius: 5, endRadius: 600)
+            RadialGradient(gradient: Gradient(colors: [.yellow, .cyan]), center: .topLeading, startRadius: 5, endRadius: 600)
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 Spacer()
@@ -29,17 +29,20 @@ struct ContentView: View {
                     Text("Выберите таблицу:")
                         .font(.largeTitle)
                         .bold()
+                        .foregroundColor(.black)
                         .padding()
                     Spacer()
                     Stepper(value: $selectedTable, in: 2...12) {
                         Text("Таблица: \(selectedTable)")
                             .font(.title)
+                            .foregroundColor(.black)
                     }
                     
                     .padding()
                     
                     Text("Выберите количество вопросов:")
                         .font(.title)
+                        .foregroundColor(.black)
                         .padding()
                     
                     Picker("Количество вопросов", selection: $numberOfQuestions) {
@@ -53,20 +56,14 @@ struct ContentView: View {
                     
                     Button(action: startGame) {
                         Text("Старт")
-                            .font(.system(size: 40))
-                            .fontWeight(.semibold)
-                            .foregroundColor(.primary)
-                            .frame(maxWidth: .infinity)
-                            .background(.thinMaterial)
-                            .clipShape(RoundedRectangle(cornerRadius: 20))
-                            .cornerRadius(20)
-                            .padding(20)
+                            .customStyle()
                         
                     }
                 } else {
                     VStack {
                         Text("Таблица умножения: \(selectedTable)")
                             .font(.title)
+                            .foregroundColor(.black)
                             .padding()
 //                            .underline(true, color: .black)
                         
@@ -105,16 +102,13 @@ struct ContentView: View {
                             
                             Button(action: restartGame) {
                                 Text("Играть снова")
-                                    .font(.title)
-                                    .foregroundColor(.primary)
-                                    .padding(20)
-                                    .background(.regularMaterial)
-                                    .clipShape(RoundedRectangle(cornerRadius: 20))
+                                    .customStyle()
                                     
                             }
                         }
                     }
                     .onAppear(perform: askQuestion)
+                    .foregroundColor(.black)
                     Spacer()
                     Button(action: goBack) {
                         Text("Назад")
@@ -169,6 +163,7 @@ struct ContentView: View {
         startGame()
     }
 }
+
 
 
 

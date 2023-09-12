@@ -11,6 +11,7 @@
 		C0381E482AAF391900326F37 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0381E472AAF391900326F37 /* ContentView.swift */; };
 		C0381E4A2AAF391B00326F37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0381E492AAF391B00326F37 /* Assets.xcassets */; };
 		C0381E4D2AAF391B00326F37 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0381E4C2AAF391B00326F37 /* Preview Assets.xcassets */; };
+		C0C923B22AB06C89004F0A9A /* CustomViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C923B12AB06C89004F0A9A /* CustomViewModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		C0381E472AAF391900326F37 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C0381E492AAF391B00326F37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C0381E4C2AAF391B00326F37 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C0C923B12AB06C89004F0A9A /* CustomViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				C0381E452AAF391900326F37 /* Multiplication_Table_for_KidsApp.swift */,
 				C0381E472AAF391900326F37 /* ContentView.swift */,
+				C0C923B12AB06C89004F0A9A /* CustomViewModifier.swift */,
 				C0381E492AAF391B00326F37 /* Assets.xcassets */,
 				C0381E4B2AAF391B00326F37 /* Preview Content */,
 			);
@@ -139,6 +142,7 @@
 			files = (
 				C0381E482AAF391900326F37 /* ContentView.swift in Sources */,
 				C0381E462AAF391900326F37 /* Multiplication_Table_for_KidsApp.swift in Sources */,
+				C0C923B22AB06C89004F0A9A /* CustomViewModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
